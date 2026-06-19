@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wilson Jair Candela Loaiza · Desarrollador Android</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #0f0f1a; color: #e0e0e0; line-height: 1.6;
+        }
+        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        header { text-align: center; padding: 4rem 0 2rem; }
+        header h1 { font-size: 2.4rem; color: #fff; }
+        header h1 span { color: #6c63ff; }
+        header .alias { color: #666; font-size: 1rem; margin-top: 0.3rem; }
+        header p { font-size: 1.2rem; color: #999; margin: 0.5rem 0 1.5rem; }
+        .links a {
+            color: #6c63ff; text-decoration: none; margin: 0 1rem; font-size: 0.95rem;
+        }
+        .links a:hover { text-decoration: underline; }
+        section { margin: 3rem 0; }
+        h2 {
+            font-size: 1.5rem; color: #fff; margin-bottom: 1.5rem;
+            border-bottom: 2px solid #6c63ff; padding-bottom: 0.5rem; display: inline-block;
+        }
+        .about p { color: #bbb; font-size: 1.05rem; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
+        .skill {
+            background: #1e1e32; color: #c0bfff; padding: 0.5rem 1.2rem;
+            border-radius: 20px; font-size: 0.9rem; border: 1px solid #333;
+        }
+        .project {
+            background: #1a1a2e; border-radius: 12px; padding: 1.5rem;
+            margin-bottom: 1.5rem; border: 1px solid #2a2a40;
+        }
+        .project h3 { color: #fff; font-size: 1.2rem; }
+        .project h3 span {
+            font-size: 0.8rem; color: #999; font-weight: normal; margin-left: 0.5rem;
+        }
+        .project p { color: #bbb; margin: 0.8rem 0; font-size: 0.95rem; }
+        .project .techs { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.8rem 0; }
+        .project .techs span {
+            background: #2a2a40; color: #aaa; padding: 0.2rem 0.8rem;
+            border-radius: 12px; font-size: 0.8rem;
+        }
+        .project a { color: #6c63ff; text-decoration: none; font-size: 0.9rem; }
+        .project a:hover { text-decoration: underline; }
+        .btn {
+            display: inline-block; background: #6c63ff; color: #fff;
+            padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none;
+            margin-top: 1rem; font-weight: 600;
+        }
+        .btn:hover { background: #5a52e0; }
+        .contact { text-align: center; padding: 2rem 0 4rem; }
+        .contact p { color: #999; margin-bottom: 0.5rem; }
+        footer { text-align: center; color: #555; font-size: 0.85rem; padding: 2rem 0; }
+        @media (max-width: 600px) {
+            header h1 { font-size: 1.8rem; }
+            .container { padding: 1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Wilson Jair <span>Candela Loaiza</span></h1>
+            <div class="alias">@ corportafolio</div>
+            <p>Desarrollador Android · Kotlin • Jetpack Compose</p>
+            <div class="links">
+                <a href="https://github.com/corportafolio" target="_blank">GitHub</a>
+                <a href="mailto:corportafolio@gmail.com">corportafolio@gmail.com</a>
+                <a href="#">LinkedIn</a>
+            </div>
+        </header>
+
+        <section class="about">
+            <h2>Sobre mí</h2>
+            <p>
+                Desarrollador Android con 2 años de experiencia creando apps nativas en Kotlin.
+                Sin título universitario, pero con aplicaciones publicadas que demuestran
+                capacidad técnica y autonomía. Me especializo en Jetpack Compose,
+                arquitectura MVVM, Room, Hilt, Retrofit y SQLCipher.
+            </p>
+        </section>
+
+        <section>
+            <h2>Habilidades</h2>
+            <div class="skills-grid">
+                <span class="skill">Kotlin</span>
+                <span class="skill">Jetpack Compose</span>
+                <span class="skill">Android SDK</span>
+                <span class="skill">Room</span>
+                <span class="skill">Hilt</span>
+                <span class="skill">Retrofit</span>
+                <span class="skill">SQLite</span>
+                <span class="skill">SQLCipher</span>
+                <span class="skill">MVVM</span>
+                <span class="skill">Git</span>
+                <span class="skill">REST APIs</span>
+                <span class="skill">WorkManager</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>Proyectos</h2>
+
+            <div class="project">
+                <h3>Bitmapcore <span>2025</span></h3>
+                <p>
+                    Explorador blockchain de Bitcoin Ordinals. Permite buscar y visualizar
+                    bloques, transacciones, inscripciones y colecciones NFT del ecosistema
+                    Bitmap. Integración con MagicEden.
+                </p>
+                <div class="techs">
+                    <span>Kotlin</span> <span>Jetpack Compose</span> <span>Room</span>
+                    <span>Hilt</span> <span>Retrofit</span> <span>SQLCipher</span>
+                </div>
+                <a href="https://github.com/corportafolio/Bitmapcore" target="_blank">GitHub →</a>
+            </div>
+
+            <div class="project">
+                <h3>Profactura <span>2025</span></h3>
+                <p>
+                    Aplicación de facturación automatizada mediante códigos personalizados.
+                    El usuario define códigos de 2 y 3 dígitos que almacenan descripción,
+                    cantidad, valor unitario, subtotal y total. Al ingresar un código,
+                    la app rellena automáticamente todos los campos, eliminando la escritura
+                    repetitiva. Ideal para negocios con cuentas recurrentes que necesitan
+                    rapidez, orden y control de inventario. Datos cifrados con SQLCipher.
+                </p>
+                <div class="techs">
+                    <span>Kotlin</span> <span>Jetpack Compose</span> <span>Room</span>
+                    <span>Hilt</span> <span>SQLCipher</span>
+                </div>
+                <a href="https://github.com/corportafolio/Profactura" target="_blank">GitHub →</a>
+            </div>
+        </section>
+
+        <section class="contact">
+            <h2>Contacto</h2>
+            <p>Estoy abierto a oportunidades como desarrollador Android.</p>
+            <p>Remoto · Colombia</p>
+            <a href="mailto:corportafolio@gmail.com" class="btn">Enviar correo</a>
+        </section>
+
+        <footer>
+            © 2026 Wilson Jair Candela Loaiza
+        </footer>
+    </div>
+</body>
+</html>

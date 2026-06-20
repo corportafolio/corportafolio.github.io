@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wilson Candela Desarrollador Android</title>
+    <title>Wilson Candela — Desarrollador Android</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             background: #0f0f1a; color: #e0e0e0; line-height: 1.6;
         }
-        .container { max-width: 900px; margin: 0 auto; padding: 2rem; }
+        .container { max-width: 920px; margin: 0 auto; padding: 2rem; }
         header { text-align: center; padding: 4rem 0 2rem; }
         header h1 { font-size: 2.4rem; color: #fff; }
         header h1 span { color: #6c63ff; }
         header .alias { color: #666; font-size: 1rem; margin-top: 0.3rem; }
         header p { font-size: 1.2rem; color: #999; margin: 0.5rem 0 1.5rem; }
         .links a {
-            color: #6c63ff; text-decoration: none; margin: 0 1rem; font-size: 0.95rem;
+            color: #6c63ff; text-decoration: none; margin: 0 0.8rem; font-size: 0.95rem;
         }
         .links a:hover { text-decoration: underline; }
         section { margin: 3rem 0; }
@@ -25,17 +25,25 @@
             font-size: 1.5rem; color: #fff; margin-bottom: 1.5rem;
             border-bottom: 2px solid #6c63ff; padding-bottom: 0.5rem; display: inline-block;
         }
-        .about p { color: #bbb; font-size: 1.05rem; }
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
+        .about p { color: #bbb; font-size: 1.02rem; margin-bottom: 0.8rem; }
+        .category { margin-bottom: 2rem; }
+        .category h3 { color: #aaa; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.6rem; }
+        .skills-grid { display: flex; flex-wrap: wrap; gap: 0.7rem; }
         .skill {
-            background: #1e1e32; color: #c0bfff; padding: 0.5rem 1.2rem;
-            border-radius: 20px; font-size: 0.9rem; border: 1px solid #333;
+            background: #1e1e32; color: #c0bfff; padding: 0.4rem 1.1rem;
+            border-radius: 20px; font-size: 0.85rem; border: 1px solid #333;
         }
+        .skill.arch { border-color: #6c63ff; }
         .project {
             background: #1a1a2e; border-radius: 12px; padding: 1.5rem;
             margin-bottom: 1.5rem; border: 1px solid #2a2a40;
         }
-        .project h3 { color: #fff; font-size: 1.2rem; }
+        .project .tag {
+            display: inline-block; background: #6c63ff22; color: #6c63ff;
+            font-size: 0.7rem; padding: 0.15rem 0.6rem; border-radius: 4px;
+            text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem;
+        }
+        .project h3 { color: #fff; font-size: 1.2rem; display: inline; }
         .project h3 span {
             font-size: 0.8rem; color: #999; font-weight: normal; margin-left: 0.5rem;
         }
@@ -47,6 +55,13 @@
         }
         .project a { color: #6c63ff; text-decoration: none; font-size: 0.9rem; }
         .project a:hover { text-decoration: underline; }
+        .workflow { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1rem; }
+        .step {
+            background: #1a1a2e; border: 1px solid #2a2a40; border-radius: 8px;
+            padding: 1rem 1.2rem; flex: 1; min-width: 140px; text-align: center;
+        }
+        .step .num { color: #6c63ff; font-size: 1.3rem; font-weight: bold; }
+        .step .label { color: #bbb; font-size: 0.85rem; margin-top: 0.3rem; }
         .btn {
             display: inline-block; background: #6c63ff; color: #fff;
             padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none;
@@ -55,10 +70,16 @@
         .btn:hover { background: #5a52e0; }
         .contact { text-align: center; padding: 2rem 0 4rem; }
         .contact p { color: #999; margin-bottom: 0.5rem; }
+        .contact .social { margin: 1rem 0; }
+        .contact .social a {
+            color: #6c63ff; text-decoration: none; margin: 0 0.8rem; font-size: 0.95rem;
+        }
+        .contact .social a:hover { text-decoration: underline; }
         footer { text-align: center; color: #555; font-size: 0.85rem; padding: 2rem 0; }
         @media (max-width: 600px) {
             header h1 { font-size: 1.8rem; }
             .container { padding: 1rem; }
+            .step { min-width: 100%; }
         }
     </style>
 </head>
@@ -66,43 +87,124 @@
     <div class="container">
         <header>
             <h1>Wilson Jair <span>Candela Loaiza</span></h1>
-            <div class="alias">@ corportafolio</div>
-            <p>Desarrollador Android · Kotlin • Jetpack Compose</p>
+            <div class="alias">@corportafolio · @CandelaCorp</div>
+            <p>Arquitecto de Software Android · Kotlin • Jetpack Compose</p>
             <div class="links">
                 <a href="https://github.com/corportafolio" target="_blank">GitHub</a>
-                <a href="mailto:corportafolio@gmail.com">corportafolio@gmail.com</a>
+                <a href="https://x.com/bitmapcorp" target="_blank">X @bitmapcorp</a>
+                <a href="https://x.com/CandelaCorp" target="_blank">X @CandelaCorp</a>
+                <a href="https://wa.me/573228040350" target="_blank">WhatsApp</a>
+                <a href="mailto:corportafolio@gmail.com">Email</a>
             </div>
         </header>
 
         <section class="about">
             <h2>Sobre mí</h2>
             <p>
-                Desarrollador Android con 2 años de experiencia creando apps nativas en Kotlin.
-                Sin título universitario, pero con aplicaciones publicadas que demuestran
-                capacidad técnica y autonomía. Me especializo en Jetpack Compose,
-                arquitectura MVVM, Room, Hilt, Retrofit y SQLCipher, experto en generacion 
-                de imagenes bitmap, utilizando el algoritmo mondrian para la generacion
-                de parcelas dentro de un bloque segun las caracticas de cada bitmap.
-                el algoritmo mondrian es el mismo que usan en la mempoll y en bitfeed. 
-                
+                Desarrollador Android con 2 años creando apps nativas en Kotlin.
+                <strong>Autodidacta</strong>, con aplicaciones publicadas que demuestran
+                capacidad técnica, autonomía y pensamiento arquitectónico. No he tomado
+                cursos formales ni tengo título universitario — aprendo construyendo,
+                documentando y refinando.
+            </p>
+            <p>
+                Mi enfoque no es solo programar: <strong>diseño la arquitectura completa</strong>
+                del proyecto (capas, patrones, bases de datos, inyección de dependencias)
+                antes de escribir la primera línea de código. Documento toda mi arquitectura
+                en <code>docs/</code>, <code>rules/</code> y <code>skills/</code> — porque
+                el código se explica solo, pero el <em>porqué</em> necesita diseño.
+            </p>
+            <p>
+                Me especializo en generación de imágenes bitmap vía Canvas personalizado
+                con algoritmos de Bin-Packing (Mondrian) para crear representaciones visuales
+                determinísticas de datos on-chain. También diseño sistemas de múltiples bases
+                de datos independientes para escalar sin cuellos de botella, caching
+                inteligente con persistencia cifrada, y conexión con wallets Bitcoin
+                mediante Deep Links con seguridad Nonce + PSBT.
             </p>
         </section>
 
         <section>
             <h2>Habilidades</h2>
-            <div class="skills-grid">
-                <span class="skill">Kotlin</span>
-                <span class="skill">Jetpack Compose</span>
-                <span class="skill">Android SDK</span>
-                <span class="skill">Room</span>
-                <span class="skill">Hilt</span>
-                <span class="skill">Retrofit</span>
-                <span class="skill">SQLite</span>
-                <span class="skill">SQLCipher</span>
-                <span class="skill">MVVM</span>
-                <span class="skill">Git</span>
-                <span class="skill">REST APIs</span>
-                <span class="skill">WorkManager</span>
+
+            <div class="category">
+                <h3>Arquitectura & Patrones</h3>
+                <div class="skills-grid">
+                    <span class="skill arch">MVVM</span>
+                    <span class="skill arch">Clean Architecture</span>
+                    <span class="skill arch">10 Brains Architecture</span>
+                    <span class="skill arch">Repository Pattern</span>
+                    <span class="skill arch">Hilt DI</span>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>UI / UX</h3>
+                <div class="skills-grid">
+                    <span class="skill">Kotlin</span>
+                    <span class="skill">Jetpack Compose</span>
+                    <span class="skill">Material 3</span>
+                    <span class="skill">Navigation Compose</span>
+                    <span class="skill">Canvas API</span>
+                    <span class="skill">Android SDK</span>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>Datos & Persistencia</h3>
+                <div class="skills-grid">
+                    <span class="skill">Room</span>
+                    <span class="skill">SQLCipher</span>
+                    <span class="skill">DataStore</span>
+                    <span class="skill">Retrofit</span>
+                    <span class="skill">OkHttp</span>
+                    <span class="skill">Gson</span>
+                    <span class="skill">REST APIs</span>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>Concurrencia & Background</h3>
+                <div class="skills-grid">
+                    <span class="skill">Coroutines</span>
+                    <span class="skill">Flow / StateFlow</span>
+                    <span class="skill">WorkManager</span>
+                    <span class="skill">Foreground Service</span>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>Seguridad & Build</h3>
+                <div class="skills-grid">
+                    <span class="skill">Android KeyStore</span>
+                    <span class="skill">AES-256 GCM</span>
+                    <span class="skill">EncryptedSharedPreferences</span>
+                    <span class="skill">ProGuard / R8</span>
+                    <span class="skill">KSP</span>
+                    <span class="skill">Git</span>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Cómo trabajo</h2>
+            <div class="workflow">
+                <div class="step">
+                    <div class="num">1</div>
+                    <div class="label">Diseño arquitectura</div>
+                </div>
+                <div class="step">
+                    <div class="num">2</div>
+                    <div class="label">Documento reglas</div>
+                </div>
+                <div class="step">
+                    <div class="num">3</div>
+                    <div class="label">Skills de implementación</div>
+                </div>
+                <div class="step">
+                    <div class="num">4</div>
+                    <div class="label">Código</div>
+                </div>
             </div>
         </section>
 
@@ -110,32 +212,51 @@
             <h2>Proyectos</h2>
 
             <div class="project">
+                <div class="tag">Arquitectura compleja</div>
                 <h3>Bitmapcore <span>2025</span></h3>
                 <p>
-                    Explorador blockchain de Bitcoin Ordinals. Permite buscar y visualizar
-                    bloques, transacciones, inscripciones y colecciones NFT del ecosistema
-                    Bitmap. Integración con Ordinalswallet y Unisat marketplace.
+                    Explorador blockchain de Bitcoin Ordinals. Busca y visualiza bloques,
+                    transacciones, inscripciones y colecciones NFT del ecosistema Bitmap.
+                    Integración con Ordinalswallet, Unisat y OKX marketplace. Conexión
+                    con wallets Bitcoin via Deep Links (Unisat, Xverse) con seguridad
+                    Nonce + PSBT. Generación de imágenes determinísticas mediante algoritmo
+                    Mondrian Bin-Packing sobre Canvas personalizado.
                 </p>
+                <p><strong>Arquitectura:</strong> 10 cerebros independientes, 14 bases de
+                datos Room, 3 marketplaces en paralelo con polling incremental, caché
+                inteligente en SQLite con BLOBs de imágenes.</p>
                 <div class="techs">
-                    <span>Kotlin</span> <span>Jetpack Compose</span> <span>Room</span>
-                    <span>Hilt</span> <span>Retrofit</span> <span>SQLCipher</span>
+                    <span>Kotlin</span> <span>Jetpack Compose</span> <span>Material 3</span>
+                    <span>Room</span> <span>SQLCipher</span> <span>Hilt</span>
+                    <span>Retrofit</span> <span>OkHttp</span> <span>Coroutines</span>
+                    <span>Flow</span> <span>WorkManager</span> <span>Canvas</span>
+                    <span>DataStore</span> <span>Navigation Compose</span>
+                    <span>Android KeyStore</span> <span>ProGuard</span>
                 </div>
                 <a href="https://github.com/corportafolio/Bitmapcore" target="_blank">GitHub →</a>
             </div>
 
             <div class="project">
+                <div class="tag">Arquitectura de datos</div>
                 <h3>Profactura <span>2025</span></h3>
                 <p>
-                    Aplicación de facturación automatizada mediante códigos personalizados.
-                    El usuario define códigos de 2 y 3 dígitos que almacenan descripción,
+                    Aplicación de facturación automatizada mediante códigos personalizados
+                    de 2 y 3 dígitos. El usuario define códigos que almacenan descripción,
                     cantidad, valor unitario, subtotal y total. Al ingresar un código,
                     la app rellena automáticamente todos los campos, eliminando la escritura
-                    repetitiva. Ideal para negocios con cuentas recurrentes que necesitan
-                    rapidez, orden y control de inventario. Datos cifrados con SQLCipher.
+                    repetitiva. Incluye historial de recibos, inventario automático
+                    programable, exportación a PDF y cifrado completo de base de datos.
                 </p>
+                <p><strong>Arquitectura:</strong> 7 tablas Room con SQLCipher, clave
+                AES-256 guardada en Android KeyStore, AlarmManager para inventario
+                automático, PDF generado con Canvas Android.</p>
                 <div class="techs">
-                    <span>Kotlin</span> <span>Jetpack Compose</span> <span>Room</span>
-                    <span>Hilt</span> <span>SQLCipher</span>
+                    <span>Kotlin</span> <span>Jetpack Compose</span> <span>Material 3</span>
+                    <span>Room</span> <span>SQLCipher</span> <span>Hilt</span>
+                    <span>Coroutines</span> <span>Flow</span> <span>DataStore</span>
+                    <span>Navigation Compose</span> <span>Android KeyStore</span>
+                    <span>Canvas PDF</span> <span>AlarmManager</span>
+                    <span>ProGuard</span>
                 </div>
                 <a href="https://github.com/corportafolio/Profactura" target="_blank">GitHub →</a>
             </div>
@@ -145,11 +266,17 @@
             <h2>Contacto</h2>
             <p>Estoy abierto a oportunidades como desarrollador Android.</p>
             <p>Remoto · Colombia</p>
+            <div class="social">
+                <a href="https://x.com/bitmapcorp" target="_blank">X @bitmapcorp</a>
+                <a href="https://x.com/CandelaCorp" target="_blank">X @CandelaCorp</a>
+                <a href="https://wa.me/573228040350" target="_blank">WhatsApp</a>
+            </div>
             <a href="mailto:corportafolio@gmail.com" class="btn">Enviar correo</a>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #666;">+57 322 804 0350</p>
         </section>
 
         <footer>
-            © 2026 Wilson Jair Candela Loaiza
+            © 2026 Wilson Jair Candela Loaiza — @corportafolio
         </footer>
     </div>
 </body>

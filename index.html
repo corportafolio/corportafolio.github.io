@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wilson Candela — Desarrollador Android</title>
+    <title>Wilson Candela — Arquitecto Android</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -86,13 +86,13 @@
 <body>
     <div class="container">
         <header>
-            <h1>Wilson Jair <span>Candela Loaiza</span></h1>
-            <div class="alias">@corportafolio · @CandelaCorp</div>
+            <h1>Wilson <span>Candela </span></h1>
+            <div class="alias">@corportafolio · @candelacorp__</div>
             <p>Arquitecto de Software Android · Kotlin • Jetpack Compose</p>
             <div class="links">
                 <a href="https://github.com/corportafolio" target="_blank">GitHub</a>
                 <a href="https://x.com/bitmapcorp" target="_blank">X @bitmapcorp</a>
-                <a href="https://x.com/CandelaCorp" target="_blank">X @CandelaCorp</a>
+                <a href="https://x.com/candelacorp__" target="_blank">X @candelacorp__</a>
                 <a href="https://wa.me/573228040350" target="_blank">WhatsApp</a>
                 <a href="mailto:corportafolio@gmail.com">Email</a>
             </div>
@@ -212,51 +212,55 @@
             <h2>Proyectos</h2>
 
             <div class="project">
-                <div class="tag">Arquitectura compleja</div>
+                <div class="tag">Arquitectura compleja · 14 bases de datos</div>
                 <h3>Bitmapcore <span>2025</span></h3>
                 <p>
                     Explorador blockchain de Bitcoin Ordinals. Busca y visualiza bloques,
                     transacciones, inscripciones y colecciones NFT del ecosistema Bitmap.
-                    Integración con Ordinalswallet, Unisat y OKX marketplace. Conexión
-                    con wallets Bitcoin via Deep Links (Unisat, Xverse) con seguridad
-                    Nonce + PSBT. Generación de imágenes determinísticas mediante algoritmo
-                    Mondrian Bin-Packing sobre Canvas personalizado.
+                    Integración con 3 marketplaces (Ordinalswallet, Unisat, OKX) con polling
+                    incremental cada 5 minutos en foreground y background. Conexión con wallets
+                    Bitcoin via Deep Links (Unisat, Xverse) con seguridad Nonce + PSBT.
+                    Generación de imágenes determinísticas de cada bloque mediante algoritmo
+                    Mondrian Bin-Packing sobre Canvas personalizado, almacenadas como BLOBs
+                    en SQLite. 14 bases de datos Room independientes, cada una con su propio
+                    ciclo de vida y propósito.
                 </p>
-                <p><strong>Arquitectura:</strong> 10 cerebros independientes, 14 bases de
-                datos Room, 3 marketplaces en paralelo con polling incremental, caché
-                inteligente en SQLite con BLOBs de imágenes.</p>
                 <div class="techs">
                     <span>Kotlin</span> <span>Jetpack Compose</span> <span>Material 3</span>
-                    <span>Room</span> <span>SQLCipher</span> <span>Hilt</span>
+                    <span>Room (×14 DBs)</span> <span>SQLCipher</span> <span>Hilt</span>
                     <span>Retrofit</span> <span>OkHttp</span> <span>Coroutines</span>
-                    <span>Flow</span> <span>WorkManager</span> <span>Canvas</span>
-                    <span>DataStore</span> <span>Navigation Compose</span>
-                    <span>Android KeyStore</span> <span>ProGuard</span>
+                    <span>Flow</span> <span>WorkManager</span> <span>Canvas Bitmap</span>
+                    <span>Mondrian Algorithm</span> <span>DataStore</span>
+                    <span>Navigation Compose</span> <span>Deep Links</span>
+                    <span>Foreground Service</span> <span>Android KeyStore</span>
+                    <span>ProGuard</span>
                 </div>
                 <a href="https://github.com/corportafolio/Bitmapcore" target="_blank">GitHub →</a>
             </div>
 
             <div class="project">
-                <div class="tag">Arquitectura de datos</div>
+                <div class="tag">Arquitectura de datos · Facturación offline</div>
                 <h3>Profactura <span>2025</span></h3>
                 <p>
                     Aplicación de facturación automatizada mediante códigos personalizados
-                    de 2 y 3 dígitos. El usuario define códigos que almacenan descripción,
-                    cantidad, valor unitario, subtotal y total. Al ingresar un código,
-                    la app rellena automáticamente todos los campos, eliminando la escritura
-                    repetitiva. Incluye historial de recibos, inventario automático
-                    programable, exportación a PDF y cifrado completo de base de datos.
+                    de 2 y 3 dígitos. Al ingresar un código, la app rellena automáticamente
+                    descripción, cantidad, valor unitario, subtotal y total — eliminando la
+                    escritura repetitiva para negocios con cuentas recurrentes. Incluye
+                    historial completo de recibos con auditoría, inventario automático
+                    programable (diario/semanal/mensual/anual) vía AlarmManager, exportación
+                    a PDF con Canvas Android, impresión térmica Bluetooth, y cifrado completo
+                    de base de datos con SQLCipher + clave AES-256 en Android KeyStore.
+                    Sistema bilingüe español/inglés con 130+ strings via CompositionLocal.
                 </p>
-                <p><strong>Arquitectura:</strong> 7 tablas Room con SQLCipher, clave
-                AES-256 guardada en Android KeyStore, AlarmManager para inventario
-                automático, PDF generado con Canvas Android.</p>
                 <div class="techs">
                     <span>Kotlin</span> <span>Jetpack Compose</span> <span>Material 3</span>
                     <span>Room</span> <span>SQLCipher</span> <span>Hilt</span>
                     <span>Coroutines</span> <span>Flow</span> <span>DataStore</span>
                     <span>Navigation Compose</span> <span>Android KeyStore</span>
                     <span>Canvas PDF</span> <span>AlarmManager</span>
-                    <span>ProGuard</span>
+                    <span>BroadcastReceiver</span> <span>FileProvider</span>
+                    <span>EncryptedSharedPreferences</span>
+                    <span>i18n (ES/EN)</span> <span>ProGuard</span>
                 </div>
                 <a href="https://github.com/corportafolio/Profactura" target="_blank">GitHub →</a>
             </div>
@@ -268,7 +272,7 @@
             <p>Remoto · Colombia</p>
             <div class="social">
                 <a href="https://x.com/bitmapcorp" target="_blank">X @bitmapcorp</a>
-                <a href="https://x.com/CandelaCorp" target="_blank">X @CandelaCorp</a>
+                <a href="https://x.com/candelacorp__" target="_blank">X @candelacorp__</a>
                 <a href="https://wa.me/573228040350" target="_blank">WhatsApp</a>
             </div>
             <a href="mailto:corportafolio@gmail.com" class="btn">Enviar correo</a>
@@ -276,7 +280,7 @@
         </section>
 
         <footer>
-            © 2026 Wilson Jair Candela Loaiza — @corportafolio
+            © 2026 Wilson Jair Candela Loaiza — @corportafolio · @candelacorp__
         </footer>
     </div>
 </body>

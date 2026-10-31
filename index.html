@@ -81,7 +81,7 @@
         }
         .contact .social a:hover { text-decoration: underline; }
         footer { text-align: center; color: #555; font-size: 0.85rem; padding: 2rem 0; }
-        /* Idiomas: por defecto se ve espanol (lang-en oculto) */
+        /* Idiomas */
         .lang-en { display: none !important; }
         body.mostrar-en .lang-en { display: inline !important; }
         body.mostrar-en .lang-es { display: none !important; }
@@ -368,27 +368,28 @@
     </div>
 
     <script>
-    var btnLang = document.getElementById('lang-toggle');
-    function setLang(lang) {
+    var btn = document.getElementById('lang-toggle');
+    function apply(lang) {
         if (lang === 'en') {
             document.body.classList.add('mostrar-en');
-            btnLang.textContent = 'ES';
-            localStorage.setItem('bc_lang', 'en');
+            btn.textContent = 'ES';
+            try { localStorage.setItem('bc_lang', 'en'); } catch(e) {}
         } else {
             document.body.classList.remove('mostrar-en');
-            btnLang.textContent = 'EN';
-            localStorage.setItem('bc_lang', 'es');
+            btn.textContent = 'EN';
+            try { localStorage.setItem('bc_lang', 'es'); } catch(e) {}
         }
     }
     (function() {
-        var stored = localStorage.getItem('bc_lang');
-        var navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
-        var lang = stored || (navLang.startsWith('en') ? 'en' : 'es');
-        setLang(lang);
+        var stored;
+        try { stored = localStorage.getItem('bc_lang'); } catch(e) { stored = null; }
+        var nav = (navigator.language || '').toLowerCase();
+        var lang = stored || (nav.startsWith('en') ? 'en' : 'es');
+        apply(lang);
     })();
     function toggleLang() {
-        var isEn = document.body.classList.contains('mostrar-en');
-        setLang(isEn ? 'es' : 'en');
+        var en = document.body.classList.contains('mostrar-en');
+        apply(en ? 'es' : 'en');
     }
     </script>
 </body>

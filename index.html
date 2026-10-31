@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wilson Candela — Arquitecto de Software · Ingeniero Android</title>
+    <title>Wilson Candela — Arquitecto de Software · Ingeniero Android & Web</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -16,10 +16,19 @@
         header h1 span { color: #6c63ff; }
         header .alias { color: #666; font-size: 1rem; margin-top: 0.3rem; }
         header p { font-size: 1.2rem; color: #999; margin: 0.5rem 0 1.5rem; }
+        .lang-toggle {
+            position: absolute; top: 1.5rem; right: 1.5rem;
+            background: transparent; color: #6c63ff; border: 1px solid #6c63ff;
+            padding: 0.3rem 0.8rem; border-radius: 4px; cursor: pointer; font-size: 0.85rem;
+        }
+        .lang-toggle:hover { background: #6c63ff; color: #fff; }
         .links a {
             color: #6c63ff; text-decoration: none; margin: 0 0.8rem; font-size: 0.95rem;
         }
         .links a:hover { text-decoration: underline; }
+        .web-link-img {
+            display: inline-block; margin-left: 0.5rem; vertical-align: middle;
+        }
         section { margin: 3rem 0; }
         h2 {
             font-size: 1.5rem; color: #fff; margin-bottom: 1.5rem;
@@ -34,10 +43,12 @@
             border-radius: 20px; font-size: 0.85rem; border: 1px solid #333;
         }
         .skill.arch { border-color: #6c63ff; }
+        .skill.web { border-color: #06b6d4; color: #93c5fd; }
         .project {
             background: #1a1a2e; border-radius: 12px; padding: 1.5rem;
             margin-bottom: 1.5rem; border: 1px solid #2a2a40;
         }
+        .project.featured { border-color: #6c63ff; background: #1b1a33; }
         .project .tag {
             display: inline-block; background: #6c63ff22; color: #6c63ff;
             font-size: 0.7rem; padding: 0.15rem 0.6rem; border-radius: 4px;
@@ -62,12 +73,6 @@
         }
         .step .num { color: #6c63ff; font-size: 1.3rem; font-weight: bold; }
         .step .label { color: #bbb; font-size: 0.85rem; margin-top: 0.3rem; }
-        .btn {
-            display: inline-block; background: #6c63ff; color: #fff;
-            padding: 0.8rem 2rem; border-radius: 8px; text-decoration: none;
-            margin-top: 1rem; font-weight: 600;
-        }
-        .btn:hover { background: #5a52e0; }
         .contact { text-align: center; padding: 2rem 0 4rem; }
         .contact p { color: #999; margin-bottom: 0.5rem; }
         .contact .social { margin: 1rem 0; }
@@ -76,73 +81,64 @@
         }
         .contact .social a:hover { text-decoration: underline; }
         footer { text-align: center; color: #555; font-size: 0.85rem; padding: 2rem 0; }
+        /* Idiomas: por defecto se ve espanol (lang-en oculto) */
+        .lang-en { display: none !important; }
+        body.mostrar-en .lang-en { display: inline !important; }
+        body.mostrar-en .lang-es { display: none !important; }
         @media (max-width: 600px) {
             header h1 { font-size: 1.8rem; }
             .container { padding: 1rem; }
             .step { min-width: 100%; }
+            .lang-toggle { top: 1rem; right: 1rem; }
         }
     </style>
 </head>
 <body>
+    <button class="lang-toggle" id="lang-toggle" onclick="toggleLang()">EN</button>
     <div class="container">
         <header>
             <h1>Wilson <span>Candela</span></h1>
-            <div class="alias">@corportafolio · @candelacorp__</div>
-            <p>Arquitecto de Software · Ingeniero Full-Stack Mobile</p>
+            <div class="alias"><span class="lang-es">corportafolio@gmail.com</span><span class="lang-en">corportafolio@gmail.com</span></div>
+            <p><span class="lang-es">Arquitecto de Software · Ingeniero Full-Stack Mobile &amp; Web</span><span class="lang-en">Software Architect · Full-Stack Mobile &amp; Web Engineer</span></p>
             <div class="links">
-                <a href="https://github.com/corportafolio" target="_blank">GitHub</a>
-                <a href="https://x.com/bitmapcorp" target="_blank">X @bitmapcorp</a>
-                <a href="https://x.com/candelacorp__" target="_blank">X @candelacorp__</a>
-                <a href="https://wa.me/573228040350" target="_blank">WhatsApp</a>
-                <a href="mailto:corportafolio@gmail.com">Email</a>
+                <a href="https://github.com/corportafolio" target="_blank"><span class="lang-es">GitHub</span><span class="lang-en">GitHub</span></a>
+                <a href="https://x.com/bitmapcorp" target="_blank"><span class="lang-es">X @bitmapcorp</span><span class="lang-en">X @bitmapcorp</span></a>
+                <a href="https://x.com/candelacorp__" target="_blank"><span class="lang-es">X @candelacorp__</span><span class="lang-en">X @candelacorp__</span></a>
+                <a href="https://wa.me/573228040350" target="_blank"><span class="lang-es">WhatsApp</span><span class="lang-en">WhatsApp</span></a>
+                <a href="mailto:corportafolio@gmail.com"><span class="lang-es">Email</span><span class="lang-en">Email</span></a>
+                <a href="https://bitmapcore.net" target="_blank"><img src="Bitmapcore/logo_bitmapcore_logo.png" alt="Bitmapcore" class="web-link-img" style="width:18px;height:18px;vertical-align:middle;margin-right:4px;"><span class="lang-es">bitmapcore.net</span><span class="lang-en">bitmapcore.net</span></a>
             </div>
         </header>
 
         <section class="about">
-            <h2>Sobre mí</h2>
+            <h2><span class="lang-es">Sobre mí</span><span class="lang-en">About me</span></h2>
             <p>
-                <strong>Arquitecto de Software</strong> e <strong>Ingeniero Full-Stack Mobile</strong>
+                <strong><span class="lang-es">Arquitecto de Software</span><span class="lang-en">Software Architect</span></strong> e
+                <strong><span class="lang-es">Ingeniero Full-Stack Mobile &amp; Web</span><span class="lang-en">Full-Stack Mobile &amp; Web Engineer</span></strong>
                 con 2 años construyendo aplicaciones Android nativas desde cero, publicadas y
-                funcionales. Autodidacta — sin títulos formales, solo proyectos reales que
-                demuestran capacidad técnica, pensamiento arquitectónico y ejecución completa
-                de principio a fin.
+                funcionales, además de aplicaciones web complejas desplegadas en infraestructura propia.
+                Autodidacta — sin títulos formales, solo proyectos reales que demuestran capacidad técnica,
+                pensamiento arquitectónico y ejecución completa de principio a fin.
             </p>
             <p>
-                Mi método consiste en tomar una idea y llevarla hasta una solución funcional,
-                escalable y documentada. <strong>Diseño la arquitectura completa</strong>
-                del proyecto (capas, patrones, bases de datos, inyección de dependencias)
-                antes de escribir código. Documento cada decisión en <code>docs/</code>,
-                <code>rules/</code> y <code>skills/</code> — porque el código explica el
-                <em>qué</em>, pero la arquitectura explica el <em>porqué</em>.
+                <span class="lang-es">Mi método consiste en tomar una idea y llevarla hasta una solución funcional, escalable y documentada. <strong>Diseño la arquitectura completa</strong> del proyecto (capas, patrones, bases de datos, inyección de dependencias) antes de escribir código. Documento cada decisión en <code>docs/</code>, <code>rules/</code> y <code>skills/</code> — porque el código explica el <em>qué</em>, pero la arquitectura explica el <em>porqué</em>.</span>
+                <span class="lang-en">My method consists of taking an idea and turning it into a functional, scalable, and documented solution. I <strong>design the complete architecture</strong> of the project (layers, patterns, databases, dependency injection) before writing code. I document every decision in <code>docs/</code>, <code>rules/</code>, and <code>skills/</code> — because code explains the <em>what</em>, but architecture explains the <em>why</em>.</span>
             </p>
             <p>
-                Tengo la capacidad de enfrentar problemas complejos y encontrar la solución
-                usando las herramientas adecuadas para cada caso: desde sistemas con 14 bases
-                de datos independientes cifradas con AES-256, hasta generación de imágenes
-                bitmap determinísticas con algoritmos de Bin-Packing (Mondrian) sobre Canvas
-                personalizado, integración con inteligencia artificial local (Qwen2.5),
-                conexión con wallets Bitcoin mediante Deep Links con seguridad Nonce + PSBT,
-                automatizaciones programables con notificaciones en segundo plano, scraping
-                de empleos con filtro inteligente, y servidores Node.js con Puppeteer para
-                integración con WhatsApp Web. Cada proyecto me ha exigido aprender, diseñar
-                y construir algo que no sabía hacer antes.
+                <span class="lang-es">Mi enfoque es el de un arquitecto que resuelve problemas, no el de un programador que solo escribe código. Analizo el problema, diseño la solución y la ejecuto, cubriendo todo el ciclo: desde la modelación de datos y la definición de capas, hasta la implementación, el despliegue y el mantenimiento en servidores propios accesibles desde cualquier parte del mundo.</span>
+                <span class="lang-en">My approach is that of an architect who solves problems, not a programmer who only writes code. I analyze the problem, design the solution, and execute it, covering the entire cycle: from data modeling and layer definition, to implementation, deployment, and maintenance on my own servers accessible from anywhere in the world.</span>
             </p>
             <p>
-                No me limito a una tecnología o un patrón: analizo el problema, diseño la
-                solución y la ejecuto. Si hace falta una base de datos cifrada, la implemento.
-                Si hace falta un servidor local, lo creo. Si hace falta un modelo de IA
-                corriendo en el dispositivo, lo integro. Mi expertise principal es Android
-                nativo con Kotlin y Jetpack Compose, pero mi enfoque es el de un
-                <strong>arquitecto que resuelve problemas</strong>, no el de un programador
-                que solo escribe código.
+                <span class="lang-es">Soy <strong>desarrollador full-stack tanto en Android como en Web</strong>, capacitado para montar cualquier VPS, accesible desde cualquier parte del mundo, y comenzar y terminar cualquier proyecto. Mis desarrollos los he realizado de forma individual, pero estoy dispuesto a trabajar con algún equipo y terminar proyectos.</span>
+                <span class="lang-en">I am a <strong>full-stack developer in both Android and Web</strong>, capable of setting up any VPS, accessible from anywhere in the world, and starting and finishing any project. I have developed my projects individually, but I am willing to work with a team and finish projects.</span>
             </p>
         </section>
 
         <section>
-            <h2>Habilidades</h2>
+            <h2><span class="lang-es">Habilidades</span><span class="lang-en">Skills</span></h2>
 
             <div class="category">
-                <h3>Arquitectura & Patrones</h3>
+                <h3><span class="lang-es">Arquitectura & Patrones</span><span class="lang-en">Architecture & Patterns</span></h3>
                 <div class="skills-grid">
                     <span class="skill arch">MVVM</span>
                     <span class="skill arch">Clean Architecture</span>
@@ -153,7 +149,7 @@
             </div>
 
             <div class="category">
-                <h3>UI / UX</h3>
+                <h3><span class="lang-es">UI / UX Mobile</span><span class="lang-en">UI / UX Mobile</span></h3>
                 <div class="skills-grid">
                     <span class="skill">Kotlin</span>
                     <span class="skill">Jetpack Compose</span>
@@ -165,7 +161,7 @@
             </div>
 
             <div class="category">
-                <h3>Datos & Persistencia</h3>
+                <h3><span class="lang-es">Datos & Persistencia</span><span class="lang-en">Data & Persistence</span></h3>
                 <div class="skills-grid">
                     <span class="skill">Room</span>
                     <span class="skill">SQLCipher</span>
@@ -178,7 +174,7 @@
             </div>
 
             <div class="category">
-                <h3>Concurrencia & Background</h3>
+                <h3><span class="lang-es">Concurrencia & Background</span><span class="lang-en">Concurrency & Background</span></h3>
                 <div class="skills-grid">
                     <span class="skill">Coroutines</span>
                     <span class="skill">Flow / StateFlow</span>
@@ -188,7 +184,7 @@
             </div>
 
             <div class="category">
-                <h3>IA & Voz</h3>
+                <h3><span class="lang-es">IA & Voz</span><span class="lang-en">AI & Voice</span></h3>
                 <div class="skills-grid">
                     <span class="skill">Qwen2.5 LLM</span>
                     <span class="skill">SpeechRecognizer</span>
@@ -198,7 +194,7 @@
             </div>
 
             <div class="category">
-                <h3>Seguridad & Build</h3>
+                <h3><span class="lang-es">Seguridad & Build Mobile</span><span class="lang-en">Security & Build Mobile</span></h3>
                 <div class="skills-grid">
                     <span class="skill">Android KeyStore</span>
                     <span class="skill">AES-256 GCM</span>
@@ -208,50 +204,91 @@
                     <span class="skill">Git</span>
                 </div>
             </div>
-        </section>
 
-        <section>
-            <h2>Cómo trabajo</h2>
-            <div class="workflow">
-                <div class="step">
-                    <div class="num">1</div>
-                    <div class="label">Idea y análisis</div>
-                </div>
-                <div class="step">
-                    <div class="num">2</div>
-                    <div class="label">Arquitectura y diseño</div>
-                </div>
-                <div class="step">
-                    <div class="num">3</div>
-                    <div class="label">Documentación de reglas</div>
-                </div>
-                <div class="step">
-                    <div class="num">4</div>
-                    <div class="label">Implementación</div>
-                </div>
-                <div class="step">
-                    <div class="num">5</div>
-                    <div class="label">Escalabilidad y refinamiento</div>
+            <div class="category">
+                <h3><span class="lang-es">Desarrollo Web & Backend</span><span class="lang-en">Web & Backend Development</span></h3>
+                <div class="skills-grid">
+                    <span class="skill web">Node.js</span>
+                    <span class="skill web">Express</span>
+                    <span class="skill web">REST API</span>
+                    <span class="skill web">SQLite / better-sqlite3</span>
+                    <span class="skill web">Múltiples bases de datos</span>
+                    <span class="skill web">JavaScript vanilla modular</span>
+                    <span class="skill web">Three.js (3D interactivo)</span>
+                    <span class="skill web">Canvas 2D & Mondrian</span>
+                    <span class="skill web">Service Workers & PWA</span>
+                    <span class="skill web">Web Workers</span>
+                    <span class="skill web">i18n (ES/EN)</span>
+                    <span class="skill web">bip322-js · PSBT · Unisat · Xverse</span>
+                    <span class="skill web">VPS Ubuntu · Nginx · PM2</span>
+                    <span class="skill web">Cloudflare SSL · Despliegue manual</span>
                 </div>
             </div>
         </section>
 
         <section>
-            <h2>Proyectos</h2>
+            <h2><span class="lang-es">Cómo trabajo</span><span class="lang-en">How I work</span></h2>
+            <div class="workflow">
+                <div class="step">
+                    <div class="num">1</div>
+                    <div class="label"><span class="lang-es">Idea y análisis</span><span class="lang-en">Idea and analysis</span></div>
+                </div>
+                <div class="step">
+                    <div class="num">2</div>
+                    <div class="label"><span class="lang-es">Arquitectura y diseño</span><span class="lang-en">Architecture and design</span></div>
+                </div>
+                <div class="step">
+                    <div class="num">3</div>
+                    <div class="label"><span class="lang-es">Documentación de reglas</span><span class="lang-en">Documentation of rules</span></div>
+                </div>
+                <div class="step">
+                    <div class="num">4</div>
+                    <div class="label"><span class="lang-es">Implementación</span><span class="lang-en">Implementation</span></div>
+                </div>
+                <div class="step">
+                    <div class="num">5</div>
+                    <div class="label"><span class="lang-es">Despliegue e infraestructura</span><span class="lang-en">Deployment and infrastructure</span></div>
+                </div>
+                <div class="step">
+                    <div class="num">6</div>
+                    <div class="label"><span class="lang-es">Escalabilidad y refinamiento</span><span class="lang-en">Scalability and refinement</span></div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2><span class="lang-es">Proyectos</span><span class="lang-en">Projects</span></h2>
+
+            <div class="project featured">
+                <div class="tag"><span class="lang-es">Proyecto principal · Full-Stack Web · Bitcoin Ordinals</span><span class="lang-en">Main project · Full-Stack Web · Bitcoin Ordinals</span></div>
+                <h3>Bitmapcore Web <span>2025 · bitmapcore.net</span></h3>
+                <p>
+                    <span class="lang-es">Explorador y marketplace de Bitcoin Ordinals y Bitmap. Mi aplicación web principal, compleja y completa: rastrea <strong>3 mercados ordinales</strong> (Unisat, Ordinalswallet y local), gestiona <strong>varias bases de datos SQLite independientes</strong> con bloques, transacciones, inscripciones y colecciones, e incluye un <strong>mundo interactivo en 3D</strong> (Three.js) con datos y activos de Bitcoin, avatares, parcelas y misiones.</span>
+                    <span class="lang-en">Explorer and marketplace for Bitcoin Ordinals and Bitmap. My main web application, complex and complete: it tracks <strong>3 ordinal marketplaces</strong> (Unisat, Ordinalswallet, and local), manages <strong>multiple independent SQLite databases</strong> with blocks, transactions, inscriptions, and collections, and includes a <strong>3D interactive world</strong> (Three.js) with Bitcoin data and assets, avatars, parcels, and missions.</span>
+                </p>
+                <p>
+                    <span class="lang-es">Genera imágenes determinísticas de cada bloque mediante Canvas 2D y el algoritmo Mondrian Bin-Packing. Conecta con wallets Bitcoin (Unisat, Xverse) mediante PSBT y deep links. El frontend es JavaScript vanilla modular con Service Worker, cache-busting automático y versión sincronizada con el backend a través de <code>/api/v1/version</code>. Desplegado en VPS propio (Ubuntu, Nginx + PM2, Cloudflare), accesible globalmente.</span>
+                    <span class="lang-en">Generates deterministic images of each block via Canvas 2D and the Mondrian Bin-Packing algorithm. Connects with Bitcoin wallets (Unisat, Xverse) via PSBT and deep links. The frontend is modular vanilla JavaScript with Service Worker, automatic cache-busting, and version synchronized with the backend through <code>/api/v1/version</code>. Deployed on my own VPS (Ubuntu, Nginx + PM2, Cloudflare), accessible globally.</span>
+                </p>
+                <div class="techs">
+                    <span>Node.js</span> <span>Express</span> <span>REST API</span>
+                    <span>SQLite</span> <span>Three.js</span> <span>Canvas 2D</span>
+                    <span>Service Worker</span> <span>JavaScript vanilla</span>
+                    <span>PSBT · Unisat · Xverse</span> <span>VPS Ubuntu</span>
+                    <span>Nginx · PM2 · Cloudflare</span>
+                </div>
+                <div style="margin-top:1rem;">
+                    <a href="https://bitmapcore.net" target="_blank"><span class="lang-es">Ver aplicación web →</span><span class="lang-en">View web app →</span></a>
+                    <a href="https://github.com/corportafolio/Bitmapcore.data.5500" target="_blank" style="margin-left:1rem;"><span class="lang-es">Código →</span><span class="lang-en">Code →</span></a>
+                </div>
+            </div>
 
             <div class="project">
-                <div class="tag">Arquitectura compleja · 14 bases de datos</div>
+                <div class="tag"><span class="lang-es">Arquitectura compleja · 14 bases de datos</span><span class="lang-en">Complex architecture · 14 databases</span></div>
                 <h3>Bitmapcore <span>2025</span></h3>
                 <p>
-                    Explorador blockchain de Bitcoin Ordinals. Busca y visualiza bloques,
-                    transacciones, inscripciones y colecciones NFT del ecosistema Bitmap.
-                    Integración con 2 marketplaces (Ordinalswallet, Unisat) con polling
-                    incremental cada 5 minutos en foreground y background. Conexión con wallets
-                    Bitcoin via Deep Links (Unisat) con seguridad Nonce + PSBT.
-                    Generación de imágenes determinísticas de cada bloque mediante algoritmo
-                    Mondrian Bin-Packing sobre Canvas personalizado, almacenadas como BLOBs
-                    en SQLite. 14 bases de datos Room independientes, cada una con su propio
-                    ciclo de vida y propósito.
+                    <span class="lang-es">Explorador blockchain de Bitcoin Ordinals. Busca y visualiza bloques, transacciones, inscripciones y colecciones NFT del ecosistema Bitmap. Integración con 2 marketplaces (Ordinalswallet, Unisat) con polling incremental cada 5 minutos en foreground y background. Conexión con wallets Bitcoin via Deep Links (Unisat) con seguridad Nonce + PSBT. Generación de imágenes determinísticas de cada bloque mediante algoritmo Mondrian Bin-Packing sobre Canvas personalizado, almacenadas como BLOBs en SQLite. 14 bases de datos Room independientes, cada una con su propio ciclo de vida y propósito.</span>
+                    <span class="lang-en">Bitcoin Ordinals blockchain explorer. Search and visualize blocks, transactions, inscriptions, and NFT collections from the Bitmap ecosystem. Integration with 2 marketplaces (Ordinalswallet, Unisat) with incremental polling every 5 minutes in foreground and background. Bitcoin wallet connection via Deep Links (Unisat) with Nonce + PSBT security. Deterministic image generation of each block via Mondrian Bin-Packing algorithm on custom Canvas, stored as BLOBs in SQLite. 14 independent Room databases, each with its own lifecycle and purpose.</span>
                 </p>
                 <div class="techs">
                     <span>Kotlin</span> <span>Jetpack Compose</span> <span>Material 3</span>
@@ -263,22 +300,15 @@
                     <span>Foreground Service</span> <span>Android KeyStore</span>
                     <span>ProGuard</span>
                 </div>
-                <a href="https://github.com/corportafolio/Bitmapcore" target="_blank">GitHub →</a>
+                <a href="https://github.com/corportafolio/Bitmapcore" target="_blank"><span class="lang-es">GitHub →</span><span class="lang-en">GitHub →</span></a>
             </div>
 
             <div class="project">
-                <div class="tag">Arquitectura de datos · Facturación offline</div>
+                <div class="tag"><span class="lang-es">Arquitectura de datos · Facturación offline</span><span class="lang-en">Data architecture · Offline billing</span></div>
                 <h3>Profactura <span>2025</span></h3>
                 <p>
-                    Aplicación de facturación automatizada mediante códigos personalizados
-                    de 2 y 3 dígitos. Al ingresar un código, la app rellena automáticamente
-                    descripción, cantidad, valor unitario, subtotal y total — eliminando la
-                    escritura repetitiva para negocios con cuentas recurrentes. Incluye
-                    historial completo de recibos con auditoría, inventario automático
-                    programable (diario/semanal/mensual/anual) vía AlarmManager, exportación
-                    a PDF con Canvas Android, impresión térmica Bluetooth, y cifrado completo
-                    de base de datos con SQLCipher + clave AES-256 en Android KeyStore.
-                    Sistema bilingüe español/inglés con 130+ strings via CompositionLocal.
+                    <span class="lang-es">Aplicación de facturación automatizada mediante códigos personalizados de 2 y 3 dígitos. Al ingresar un código, la app rellena automáticamente descripción, cantidad, valor unitario, subtotal y total — eliminando la escritura repetitiva para negocios con cuentas recurrentes. Incluye historial completo de recibos con auditoría, inventario automático programable (diario/semanal/mensual/anual) vía AlarmManager, exportación a PDF con Canvas Android, impresión térmica Bluetooth, y cifrado completo de base de datos con SQLCipher + clave AES-256 en Android KeyStore. Sistema bilingüe español/inglés con 130+ strings via CompositionLocal.</span>
+                    <span class="lang-en">Automated billing application using custom 2 and 3 digit codes. When entering a code, the app automatically fills in description, quantity, unit price, subtotal, and total — eliminating repetitive writing for businesses with recurring accounts. Includes complete receipt history with audit, programmable automatic inventory (daily/weekly/monthly/annual) via AlarmManager, PDF export via Android Canvas, Bluetooth thermal printing, and full database encryption with SQLCipher + AES-256 key in Android KeyStore. Bilingual Spanish/English system with 130+ strings via CompositionLocal.</span>
                 </p>
                 <div class="techs">
                     <span>Kotlin</span> <span>Jetpack Compose</span> <span>Material 3</span>
@@ -290,27 +320,19 @@
                     <span>EncryptedSharedPreferences</span>
                     <span>i18n (ES/EN)</span> <span>ProGuard</span>
                 </div>
-                <a href="https://github.com/corportafolio/Profactura" target="_blank">GitHub →</a>
+                <a href="https://github.com/corportafolio/Profactura" target="_blank"><span class="lang-es">GitHub →</span><span class="lang-en">GitHub →</span></a>
             </div>
 
             <div class="project">
-                <div class="tag">Inteligencia artificial · WhatsApp · Voz</div>
+                <div class="tag"><span class="lang-es">Inteligencia artificial · WhatsApp · Voz</span><span class="lang-en">AI · WhatsApp · Voice</span></div>
                 <h3>Paicor <span>2025</span></h3>
                 <p>
-                    Asistente inteligente para Android que automatiza tareas, gestiona
-                    WhatsApp, busca empleo inteligentemente y responde preguntas con IA
-                    local — todo sin conexión a internet. Incluye chat con modelo de
-                    lenguaje Qwen2.5 descargado directamente desde HuggingFace al
-                    dispositivo, reconocimiento de voz con ecualizador en tiempo real,
-                    y Text-to-Speech para respuestas habladas.
+                    <span class="lang-es">Asistente inteligente para Android que automatiza tareas, gestiona WhatsApp, busca empleo inteligentemente y responde preguntas con IA local — todo sin conexión a internet. Incluye chat con modelo de lenguaje Qwen2.5 descargado directamente desde HuggingFace al dispositivo, reconocimiento de voz con ecualizador en tiempo real, y Text-to-Speech para respuestas habladas.</span>
+                    <span class="lang-en">Intelligent assistant for Android that automates tasks, manages WhatsApp, searches for jobs intelligently, and answers questions with local AI — all without internet connection. Includes chat with Qwen2.5 language model downloaded directly from HuggingFace to the device, voice recognition with real-time equalizer, and Text-to-Speech for spoken responses.</span>
                 </p>
                 <p>
-                    Se integra con WhatsApp Web vía servidor local para leer, enviar
-                    mensajes y generar respuestas automáticas personalizadas por contacto.
-                    Además, busca ofertas de empleo en LinkedIn, Computrabajo y Elempleo
-                    cada 12 horas, las filtra con IA y notifica solo las que aplican
-                    al perfil del usuario. Automatizaciones programables con fecha, hora
-                    y anticipación, ejecutadas en segundo plano con notificación del resultado.
+                    <span class="lang-es">Se integra con WhatsApp Web vía servidor local para leer, enviar mensajes y generar respuestas automáticas personalizadas por contacto. Además, busca ofertas de empleo en LinkedIn, Computrabajo y Elempleo cada 12 horas, las filtra con IA y notifica solo las que aplican al perfil del usuario. Automatizaciones programables con fecha, hora y anticipación, ejecutadas en segundo plano con notificación del resultado.</span>
+                    <span class="lang-en">Integrates with WhatsApp Web via local server to read, send messages, and generate automatic personalized responses per contact. Also searches for job offers on LinkedIn, Computrabajo, and Elempleo every 12 hours, filters them with AI, and notifies only those that apply to the user's profile. Programmable automations with date, time, and advance notice, executed in the background with result notification.</span>
                 </p>
                 <div class="techs">
                     <span>Kotlin</span> <span>Jetpack Compose</span> <span>Material 3</span>
@@ -322,26 +344,52 @@
                     <span>Foreground Service</span> <span>DataStore</span>
                     <span>ProGuard</span>
                 </div>
-                <a href="https://github.com/corportafolio/Paicor" target="_blank">GitHub →</a>
+                <a href="https://github.com/corportafolio/Paicor" target="_blank"><span class="lang-es">GitHub →</span><span class="lang-en">GitHub →</span></a>
             </div>
         </section>
 
         <section class="contact">
-            <h2>Contacto</h2>
-            <p>Estoy abierto a oportunidades como Arquitecto de Software o Ingeniero Android.</p>
-            <p>Remoto · Colombia</p>
+            <h2><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></h2>
+            <p><span class="lang-es">Estoy abierto a oportunidades como Arquitecto de Software o Ingeniero Android / Full-Stack.</span><span class="lang-en">I am open to opportunities as Software Architect or Android / Full-Stack Engineer.</span></p>
+            <p><span class="lang-es">Remoto · Colombia</span><span class="lang-en">Remote · Colombia</span></p>
             <div class="social">
-                <a href="https://x.com/bitmapcorp" target="_blank">X @bitmapcorp</a>
-                <a href="https://x.com/candelacorp__" target="_blank">X @candelacorp__</a>
-                <a href="https://wa.me/573228040350" target="_blank">WhatsApp</a>
+                <a href="https://x.com/bitmapcorp" target="_blank"><span class="lang-es">X @bitmapcorp</span><span class="lang-en">X @bitmapcorp</span></a>
+                <a href="https://x.com/candelacorp__" target="_blank"><span class="lang-es">X @candelacorp__</span><span class="lang-en">X @candelacorp__</span></a>
+                <a href="https://wa.me/573228040350" target="_blank"><span class="lang-es">WhatsApp</span><span class="lang-en">WhatsApp</span></a>
             </div>
-            <a href="mailto:corportafolio@gmail.com" class="btn">Enviar correo</a>
-            <p style="margin-top: 1rem; font-size: 0.85rem; color: #666;">+57 322 804 0350</p>
+            <p style="margin-top: 1rem; font-size: 0.85rem; color: #666;"><span class="lang-es">corportafolio@gmail.com</span><span class="lang-en">corportafolio@gmail.com</span></p>
+            <p style="margin-top: 0.5rem; font-size: 0.85rem; color: #666;">+57 322 804 0350</p>
         </section>
 
         <footer>
-            © 2026 Wilson Candela — Arquitecto de Software · @corportafolio · @candelacorp__
+            <span class="lang-es">© 2026 Wilson Candela — Arquitecto de Software · @corportafolio · @candelacorp__</span>
+            <span class="lang-en">© 2026 Wilson Candela — Software Architect · @corportafolio · @candelacorp__</span>
         </footer>
     </div>
+
+    <script>
+    var btnLang = document.getElementById('lang-toggle');
+    function setLang(lang) {
+        if (lang === 'en') {
+            document.body.classList.add('mostrar-en');
+            btnLang.textContent = 'ES';
+            localStorage.setItem('bc_lang', 'en');
+        } else {
+            document.body.classList.remove('mostrar-en');
+            btnLang.textContent = 'EN';
+            localStorage.setItem('bc_lang', 'es');
+        }
+    }
+    (function() {
+        var stored = localStorage.getItem('bc_lang');
+        var navLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+        var lang = stored || (navLang.startsWith('en') ? 'en' : 'es');
+        setLang(lang);
+    })();
+    function toggleLang() {
+        var isEn = document.body.classList.contains('mostrar-en');
+        setLang(isEn ? 'es' : 'en');
+    }
+    </script>
 </body>
 </html>
